@@ -84,9 +84,11 @@ Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/QithYang
 
 **[Live demo](https://qithyang.github.io/QithYang/)** · The full source is public in the repository above.
 
-![QithYang viewer showing a synthetic sample conversation](assets/qithyang-viewer.jpg)
+| Chat view | Timeline |
+|---|---|
+| ![QithYang chat view showing a synthetic sample conversation](assets/qithyang-viewer.jpg) | ![QithYang month timeline](assets/qithyang-timeline.jpg) |
 
-*The interface is in Chinese. The screenshot shows the bundled synthetic sample conversation, not real data.*
+*The interface is in Chinese. The screenshots show the bundled synthetic sample conversation, not real data.*
 
 - **Chat view:** Markdown rendering, code blocks, and collapsible thinking and tool-call blocks.
 - **Navigation:** conversation list with title search, bookmarks grouped by conversation, and a month-calendar timeline.
