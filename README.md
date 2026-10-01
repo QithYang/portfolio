@@ -82,4 +82,15 @@ Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/QithYang
 
 - Designed a static web app that parses exported AI chat archives entirely in the browser, with IndexedDB storage, UUID-based deduplication on re-import and a public demo built on synthetic data.
 
-The full source is public in the repository above.
+**[Live demo](https://qithyang.github.io/QithYang/)** · The full source is public in the repository above.
+
+![QithYang viewer showing a synthetic sample conversation](assets/qithyang-viewer.jpg)
+
+*The interface is in Chinese. The screenshot shows the bundled synthetic sample conversation, not real data.*
+
+- **Chat view:** Markdown rendering, code blocks, and collapsible thinking and tool-call blocks.
+- **Navigation:** conversation list with title search, bookmarks grouped by conversation, and a month-calendar timeline.
+- **Search:** within the current conversation or across all of them, with highlighting and next/previous jumps.
+- **Re-import:** importing a newer export merges conversations by UUID instead of duplicating them.
+- **Export:** a JSON backup, or a self-contained HTML file that opens on its own.
+- **Privacy:** everything stays in the browser's IndexedDB; the page sends no data anywhere.
