@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 170" width="760" height="170" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12">
+  <title>Health data pipeline</title>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6575"/></marker>
+  </defs>
+  <rect width="760" height="170" fill="#ffffff"/>
+  <g fill="#18212e">
+    <text x="10" y="18" fill="#5a6575" font-size="10.5">ON THE PHONE</text>
+    <text x="400" y="18" fill="#5a6575" font-size="10.5">ON THE SERVER</text>
+    <rect x="10" y="30" width="110" height="50" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="20" y="52">Wearable</text><text x="20" y="68" fill="#5a6575" font-size="10.5">band</text>
+    <rect x="140" y="30" width="110" height="50" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="150" y="52">Health</text><text x="150" y="68">Connect</text>
+    <rect x="270" y="30" width="110" height="50" rx="4" fill="#f6e3ea" stroke="#b23a62"/><text x="280" y="52">Android app</text><text x="280" y="68" fill="#5a6575" font-size="10.5">every 15 min</text>
+    <rect x="400" y="30" width="100" height="50" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="410" y="52">FastAPI</text><text x="410" y="68" fill="#5a6575" font-size="10.5">sync endpoint</text>
+    <rect x="520" y="30" width="100" height="50" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="530" y="52">SQLite</text><text x="530" y="68" fill="#5a6575" font-size="10.5">health DB</text>
+    <rect x="640" y="30" width="110" height="50" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="650" y="52">MCP tools</text><text x="650" y="68" fill="#5a6575" font-size="10.5">assistant reads</text>
+    <text x="270" y="104" fill="#5a6575" font-size="10.5">7 record types, idempotent uploads</text>
+    <text x="270" y="120" fill="#5a6575" font-size="10.5">retry with exponential backoff</text>
+    <text x="520" y="104" fill="#5a6575" font-size="10.5">nightly roll-up of older</text>
+    <text x="520" y="120" fill="#5a6575" font-size="10.5">heart-rate and step data</text>
+  </g>
+  <g fill="none" stroke="#5a6575" stroke-width="1.3">
+    <path d="M120 55 H138" marker-end="url(#ar)"/><path d="M250 55 H268" marker-end="url(#ar)"/><path d="M380 55 H398" marker-end="url(#ar)"/>
+    <path d="M500 55 H518" marker-end="url(#ar)"/><path d="M620 55 H638" marker-end="url(#ar)"/>
+  </g>
+</svg>

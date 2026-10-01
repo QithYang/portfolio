@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12">
+  <title>Pink Anchor architecture</title>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5a6575"/></marker>
+    <marker id="ara" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a62"/></marker>
+  </defs>
+  <rect width="760" height="300" fill="#ffffff"/>
+  <g fill="#18212e">
+    <text x="20" y="22" fill="#5a6575" font-size="10.5">CLIENTS</text>
+    <rect x="20" y="36" width="150" height="46" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="32" y="56">AI assistant</text><text x="32" y="72" fill="#5a6575" font-size="10.5">MCP client</text>
+    <rect x="20" y="96" width="150" height="46" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="32" y="116">Android app</text><text x="32" y="132" fill="#5a6575" font-size="10.5">health upload, views</text>
+    <rect x="20" y="156" width="150" height="46" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="32" y="176">Browser</text><text x="32" y="192" fill="#5a6575" font-size="10.5">read-only gallery</text>
+
+    <rect x="215" y="36" width="120" height="166" rx="4" fill="#f6e3ea" stroke="#b23a62"/>
+    <text x="227" y="60">Cloudflare</text><text x="227" y="76">Tunnel</text>
+    <text x="227" y="104" fill="#5a6575" font-size="10.5">only web entry</text>
+    <text x="227" y="120" fill="#5a6575" font-size="10.5">every service</text>
+    <text x="227" y="136" fill="#5a6575" font-size="10.5">authenticated</text>
+
+    <rect x="360" y="14" width="380" height="270" rx="6" fill="none" stroke="#d9dee6" stroke-dasharray="4 4"/>
+    <text x="372" y="32" fill="#5a6575" font-size="10.5">2 GB SERVER · DEFAULT-DENY FIREWALL · KEY-ONLY SSH</text>
+    <rect x="375" y="46" width="150" height="46" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="387" y="66">MCP server</text><text x="387" y="82" fill="#5a6575" font-size="10.5">7 multi-action tools</text>
+    <rect x="375" y="110" width="150" height="46" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="387" y="130">FastAPI service</text><text x="387" y="146" fill="#5a6575" font-size="10.5">write pipeline, search</text>
+    <rect x="375" y="174" width="150" height="46" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="387" y="194">Static gallery</text><text x="387" y="210" fill="#5a6575" font-size="10.5">read-only web server</text>
+    <rect x="565" y="78" width="160" height="78" rx="4" fill="#f6f7f9" stroke="#d9dee6"/><text x="577" y="100">SQLite</text><text x="577" y="118" fill="#5a6575" font-size="10.5">FTS5 full-text</text><text x="577" y="134" fill="#5a6575" font-size="10.5">+ vector search</text><text x="577" y="148" fill="#5a6575" font-size="10.5">memory + health DBs</text>
+    <rect x="565" y="196" width="160" height="72" rx="4" fill="#f6e3ea" stroke="#b23a62"/><text x="577" y="218">Backup + monitor</text><text x="577" y="236" fill="#5a6575" font-size="10.5">daily off-site backup</text><text x="577" y="252" fill="#5a6575" font-size="10.5">monthly restore drill</text>
+  </g>
+  <g fill="none" stroke="#5a6575" stroke-width="1.3">
+    <path d="M170 59 H213" marker-end="url(#ar)"/><path d="M170 119 H213" marker-end="url(#ar)"/><path d="M170 179 H213" marker-end="url(#ar)"/>
+    <path d="M335 69 H373" marker-end="url(#ar)"/><path d="M335 133 H373" marker-end="url(#ar)"/><path d="M335 190 H373" marker-end="url(#ar)"/>
+    <path d="M450 92 V108" marker-end="url(#ar)"/><path d="M525 133 H563" marker-end="url(#ar)"/>
+  </g>
+  <path d="M645 156 V194" fill="none" stroke="#b23a62" stroke-width="1.5" marker-end="url(#ara)"/>
+</svg>
