@@ -90,7 +90,7 @@ Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/QithYang
 | **Search within or across conversations** | **Timeline and data menu** |
 | ![Search bar over a multi-day conversation](assets/qithyang-search.jpg) | ![Month timeline with the data management menu open](assets/qithyang-data.jpg) |
 
-*The interface is in Chinese. The screenshots show the bundled synthetic sample conversation, not real data.*
+*The interface is in Chinese. The screenshots show the bundled synthetic sample conversations, not real data.*
 
 - **Chat view:** Markdown rendering, code blocks, and collapsible thinking and tool-call blocks.
 - **Navigation:** conversation list with title search, bookmarks grouped by conversation, and a month-calendar timeline.
