@@ -1,5 +1,5 @@
 # Excerpt from the private Pink Anchor repository.
-# Trimmed for readability.
+# Trimmed for readability; helper functions and imports are omitted.
 #
 # MCP server exposing the personal data hub to LLM clients.
 # Design choice: 7 merged tools (pa_memory, pa_window, pa_diary, pa_cycle,
@@ -23,7 +23,8 @@ TIMEOUT = 15
 mcp = FastMCP("pa-mcp")
 
 
-async def _api(method: str, path: str, body: dict = None, params: dict = None) -> dict:
+async def _api(method: str, path: str, body: dict | None = None,
+               params: dict | None = None) -> dict:
     """Single HTTP helper. Errors come back as data, so the model sees a readable
     message instead of a crashed tool call."""
     try:
@@ -38,7 +39,8 @@ async def _api(method: str, path: str, body: dict = None, params: dict = None) -
         return {"error": str(e)}
 
 
-_out = lambda data: json.dumps(data, ensure_ascii=False)
+def _out(data: dict) -> str:
+    return json.dumps(data, ensure_ascii=False)
 
 
 @mcp.tool()

@@ -1,10 +1,10 @@
 #!/bin/bash
 # Excerpt from the private Pink Anchor repository.
-# Trimmed for readability.
+# Trimmed for readability; helper functions are omitted.
 #
 # Monthly disaster-recovery drill (cron, 1st of each month).
-# Pulls the most recent daily off-site backup back down from the off-site store
-# , then verifies every piece can actually be restored.
+# Pulls the most recent daily backup back down from the off-site store,
+# then verifies every piece can actually be restored.
 # Read-only against production. All pass -> clean up, exit 0.
 # Any failure -> keep the work directory for inspection, exit 1, send an alert.
 # Not covered: it does not start containers from the restored data.
@@ -40,6 +40,7 @@ if [ -z "$MAINGZ" ]; then bad "main db missing"; else
   Q="SELECT count(*) FROM memories WHERE deleted_at IS NULL LIMIT 1;"
   RESTORED=$(sqlite3 "$DB" "$Q")
   LIVE=$(sqlite3 "file:$APP_DIR/db/main.db?mode=ro" "$Q")   # live db opened read-only
+  # Small drift is expected: a few memories may be written after the backup ran.
   DIFF=$(( RESTORED > LIVE ? RESTORED - LIVE : LIVE - RESTORED ))
   [ "$DIFF" -le 3 ] && ok "row count restored=$RESTORED live=$LIVE" \
                     || bad "row count drift restored=$RESTORED live=$LIVE"

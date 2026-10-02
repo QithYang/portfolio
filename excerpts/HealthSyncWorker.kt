@@ -1,5 +1,5 @@
 // Excerpt from the private Pink Anchor repository.
-// Trimmed for readability.
+// Trimmed for readability; imports and helper classes are omitted.
 //
 // Background health sync: Health Connect -> local Room DB -> server.
 // Shortened: WorkManager worker, Health Connect reader, upload step.

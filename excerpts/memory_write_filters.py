@@ -1,5 +1,5 @@
 # Excerpt from the private Pink Anchor repository.
-# Trimmed for readability.
+# Trimmed for readability; helper functions and imports are omitted.
 #
 # Part 1: content filters applied to candidate memories proposed by the LLM
 #         extraction step (the "what" field is the one-sentence memory text).
@@ -86,11 +86,11 @@ def _pre_write_dedup(memory: dict) -> tuple[str, int | None]:
 def _find_merge_by_key(memory: dict) -> int | None:
     """merge_key is '<tag>_<core word>', e.g. 'habit_morning-run'.
     Same key = same subject, merged permanently (no time window)."""
+    # (Omitted: a fuzzier second path matches sibling-tag keys via LIKE + character
+    #  similarity >= 0.55. Blind spot: similar wording with opposite meaning gets merged.)
     rows = execute_query("SELECT id FROM memories WHERE deleted_at IS NULL AND merge_key = ? "
                          "ORDER BY created_at DESC LIMIT 1", (memory["merge_key"],))
     return rows[0]["id"] if rows else None
-    # (A fuzzier second path: sibling-tag keys via LIKE + character similarity
-    #  >= 0.55. Blind spot: similar wording with opposite meaning gets merged.)
 
 
 def write_memory(memory: dict) -> dict:

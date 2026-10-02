@@ -1,5 +1,5 @@
 # Excerpt from the private Pink Anchor repository.
-# Trimmed for readability.
+# Trimmed for readability; helper functions and imports are omitted.
 #
 # Hybrid recall: SQLite FTS5 (BM25) + embedding similarity, merged and re-scored.
 
@@ -56,7 +56,7 @@ def compute_score(mem: dict, query_keywords: list) -> float:
 
 # ---------------------------------------------------------------- search pipeline
 
-def search_memories(query: str, limit: int = 10, category: str = None) -> list[dict]:
+def search_memories(query: str, limit: int = 10, category: str | None = None) -> list[dict]:
     """FTS5 -> LIKE fallback -> vector search -> merge -> rerank -> threshold."""
     query_keywords = extract_recall_keywords(query)   # jieba-based keyword extraction
     fetch_limit = max(limit * 2, 15)
