@@ -1,6 +1,6 @@
 # Technical Projects
 
-Three systems I built and run for my own use. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts. QithYang is public.
+Three systems I built and run for my own use. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts. Chat Archive Viewer is public.
 
 **Specified, designed, tested, deployed and operated these systems, directing AI coding tools to write all the code.**
 
@@ -8,7 +8,7 @@ Three systems I built and run for my own use. Pink Anchor and its Android app ar
 |---|---|---|
 | [Pink Anchor](#pink-anchor) | Feb 2026 – present | Self-hosted memory and data service for AI assistants |
 | [Pink Anchor for Android](#pink-anchor-for-android) | Mar 2026 – present | Health data pipeline and app |
-| [QithYang](#qithyang) | May 2026 | Client-side conversation archive viewer |
+| [Chat Archive Viewer](#chat-archive-viewer) | May 2026 | Client-side reader for exported AI chats |
 
 ---
 
@@ -89,9 +89,9 @@ After app storage was cleared, health data stopped reaching the server and the a
 
 ---
 
-## QithYang
+## Chat Archive Viewer
 
-**Client-side conversation archive viewer** · May 2026
+**Client-side reader for exported AI chats** · May 2026
 
 Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/chat-archive-viewer](https://github.com/QithYang/chat-archive-viewer)
 
