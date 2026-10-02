@@ -20,7 +20,7 @@ Stack: Ubuntu, Python/FastAPI, SQLite FTS5, Docker Compose, Model Context Protoc
 
 AI assistants forget everything between conversations and between apps. Pink Anchor is one private store for my notes, project documents, conversation summaries and health data. Assistants read and write it through MCP tools.
 
-- Designed 7 multi-action MCP tools through which AI assistants read and write memory, grouping actions to save context-window space, and combined Chinese full-text and vector search for retrieval.
+- Designed 7 multi-action MCP tools through which AI assistants read and write memory, grouping actions to save context-window space, and combining Chinese full-text and vector search for retrieval.
 - Deployed 8 Docker Compose services, rebuildable with one command, on a 2 GB RAM virtual server secured by Cloudflare Tunnel as the only web entry, a default-deny firewall and key-only SSH.
 - Automated daily off-site backups of 177,000+ records, from notes, project documents and conversation summaries to health data, and monthly restore drills that check integrity and row counts. Added failure alerts and pre-commit secret scanning.
 
