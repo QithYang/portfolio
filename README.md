@@ -53,6 +53,8 @@ The full write-up is in **[docs/memory-system.md](docs/memory-system.md)**. In s
 
 ## Pink Anchor for Android
 
+<img src="assets/android-icon.png" width="88" alt="Pink Anchor app icon">
+
 **Health data pipeline and app** · Mar 2026 – present
 
 Stack: Kotlin, Jetpack Compose, Health Connect
