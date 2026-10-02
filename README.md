@@ -99,13 +99,16 @@ Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/QithYang
 
 **[Live demo](https://qithyang.github.io/QithYang/)** · The full source is public in the repository above.
 
-| Chat view with Markdown | Collapsible thinking blocks |
-|---|---|
-| ![Chat view showing a synthetic sample conversation](assets/qithyang-viewer.jpg) | ![Expanded thinking blocks](assets/qithyang-thinking.jpg) |
-| **Search within or across conversations** | **Timeline and data menu** |
-| ![Search bar over a multi-day conversation](assets/qithyang-search.jpg) | ![Month timeline with the data management menu open](assets/qithyang-data.jpg) |
+<p align="center">
+<img src="assets/qithyang-viewer.jpg" width="400" alt="Chat view with Markdown, showing a synthetic sample conversation">
+<img src="assets/qithyang-thinking.jpg" width="400" alt="Expanded thinking blocks">
+</p>
+<p align="center">
+<img src="assets/qithyang-search.jpg" width="400" alt="Search within or across conversations">
+<img src="assets/qithyang-data.jpg" width="400" alt="Month timeline with the data menu open">
+</p>
 
-*The interface is in Chinese. The screenshots show the bundled synthetic sample conversations, not real data.*
+*Chat view, thinking blocks, search, and the timeline with the data menu. The interface is in Chinese; the screenshots show the bundled synthetic sample conversations, not real data.*
 
 - **Chat view:** Markdown rendering, code blocks, and collapsible thinking and tool-call blocks.
 - **Navigation:** conversation list with title search, bookmarks grouped by conversation, and a month-calendar timeline.

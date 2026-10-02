@@ -14,8 +14,6 @@
     <rect x="215" y="36" width="120" height="166" rx="4" fill="#f6e3ea" stroke="#b23a62"/>
     <text x="227" y="60">Cloudflare</text><text x="227" y="76">Tunnel</text>
     <text x="227" y="104" fill="#5a6575" font-size="10.5">only web entry</text>
-    <text x="227" y="120" fill="#5a6575" font-size="10.5">every service</text>
-    <text x="227" y="136" fill="#5a6575" font-size="10.5">authenticated</text>
 
     <rect x="360" y="14" width="380" height="270" rx="6" fill="none" stroke="#d9dee6" stroke-dasharray="4 4"/>
     <text x="372" y="32" fill="#5a6575" font-size="10.5">2 GB SERVER · DEFAULT-DENY FIREWALL · KEY-ONLY SSH</text>
