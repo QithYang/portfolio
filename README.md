@@ -1,6 +1,6 @@
 # Technical Projects
 
-Three systems I built and run for my own use. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams and selected code excerpts. QithYang is public.
+Three systems I built and run for my own use. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts. QithYang is public.
 
 **Specified, designed, tested, deployed and operated these systems, directing AI coding tools to write all the code.**
 
@@ -61,6 +61,19 @@ Stack: Kotlin, Jetpack Compose, Health Connect
 - Reproduced a silent sync failure on a real device and confirmed from app and server logs that clearing app storage had revoked Health Connect permissions. Directed the fix and verified it in the release build.
 
 ![Health data pipeline](assets/health-pipeline.svg)
+
+### Screens
+
+<p align="center"><img src="assets/android-home.png" width="320" alt="Home screen with daily note, countdowns, steps, heart rate, sleep, cycle and screen time cards"></p>
+
+*Screenshots from my own phone, with personal details covered. The home screen combines captures from different days.*
+
+<p align="center">
+<img src="assets/android-menu.png" width="200" alt="Navigation menu">
+<img src="assets/android-memory.png" width="200" alt="Memory list with category filters">
+<img src="assets/android-monitor.png" width="200" alt="Server monitor with containers, resources and service checks">
+<img src="assets/android-settings.png" width="200" alt="Settings with server connection status">
+</p>
 
 ### The silent sync failure
 
