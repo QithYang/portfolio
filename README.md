@@ -38,7 +38,7 @@ The full write-up is in **[docs/memory-system.md](docs/memory-system.md)**. In s
 ### Backups and restore drills
 
 - Every day, nine items are copied off-site. The database is copied with SQLite's online backup API so recent write-ahead-log changes are not lost. Any failed item sends an alert.
-- On the 1st of each month a drill downloads the latest off-site backup, checks file sizes against the manifest, runs `PRAGMA integrity_check`, compares row counts with the live database and confirms every archive opens. Drills on 1 Aug, 1 Sep and 1 Oct 2026 passed all 24 checks.
+- On the 1st of each month a drill downloads the latest off-site backup, checks file sizes against the manifest, runs `PRAGMA integrity_check`, compares row counts with the live database and confirms every archive opens. Every monthly drill since August 2026 has passed all 24 checks.
 
 ### Code excerpts
 
