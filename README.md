@@ -93,11 +93,11 @@ After app storage was cleared, health data stopped reaching the server and the a
 
 **Client-side conversation archive viewer** · May 2026
 
-Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/QithYang](https://github.com/QithYang/QithYang)
+Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/chat-archive-viewer](https://github.com/QithYang/chat-archive-viewer)
 
 - Designed a static web app that parses exported AI chat archives entirely in the browser, with IndexedDB storage, UUID-based deduplication on re-import and a public demo built on synthetic data.
 
-**[Live demo](https://qithyang.github.io/QithYang/)** · The full source is public in the repository above.
+**[Live demo](https://qithyang.github.io/chat-archive-viewer/)** · The full source is public in the repository above.
 
 <p align="center">
 <img src="assets/qithyang-viewer.jpg" width="400" alt="Chat view with Markdown, showing a synthetic sample conversation">
