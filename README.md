@@ -25,45 +25,20 @@ Stack: JavaScript, SVG, IndexedDB, GitHub Pages · [github.com/QithYang/chat-arc
 
 **[Live demo](https://qithyang.github.io/chat-archive-viewer/)** (opens on the dashboard)
 
-**Dashboard**
+<p align="center"><img src="assets/viewer-stats-overview.jpg" width="640" alt="Dashboard overview: conversations, messages, time span, active days, longest streak, late-night chats, and each side's share of characters"></p>
 
 <p align="center">
-<img src="assets/viewer-stats-overview.jpg" width="820" alt="Overview: conversations, messages, time span, active days, longest streak, late-night chats, and each side's share of characters">
+<img src="assets/viewer-tile-activity.jpg" width="266" alt="Activity over time: daily heatmap and characters per month">
+<img src="assets/viewer-tile-rhythm.jpg" width="266" alt="Weekly and daily rhythm">
+<img src="assets/viewer-tile-topics.jpg" width="266" alt="Topics from conversation titles">
 </p>
 <p align="center">
-<img src="assets/viewer-stats-heatmap.jpg" width="820" alt="Daily message heatmap with four colour levels">
-</p>
-<p align="center">
-<img src="assets/viewer-stats-rhythm.jpg" width="820" alt="Messages by weekday and by hour of the day">
-</p>
-<p align="center">
-<img src="assets/viewer-stats-topics.jpg" width="400" alt="Topics from conversation titles, ranked by conversations and messages">
-<img src="assets/viewer-stats-words.jpg" width="400" alt="Most frequent words for each side, in Chinese and English">
-</p>
-<p align="center">
-<img src="assets/viewer-stats-monthly.jpg" width="400" alt="Characters per month for user and model">
-<img src="assets/viewer-stats-rankings.jpg" width="400" alt="Longest and late-night conversations">
+<img src="assets/viewer-tile-words.jpg" width="266" alt="Top words for each side, in Chinese and English">
+<img src="assets/viewer-tile-reader.jpg" width="266" alt="Reader with Markdown and a thinking block">
+<img src="assets/viewer-tile-mobile.jpg" width="266" alt="Dashboard on a phone">
 </p>
 
-*Overview, daily heatmap, weekly and daily rhythm, topics from conversation titles, top words, characters per month, and rankings.*
-
-**Reader**
-
-<p align="center">
-<img src="assets/viewer-chat.jpg" width="400" alt="Reader with Markdown and an expanded thinking block">
-<img src="assets/viewer-search.jpg" width="400" alt="Search across all conversations with highlighted matches">
-</p>
-<p align="center">
-<img src="assets/viewer-timeline.jpg" width="400" alt="Month-calendar timeline">
-</p>
-<p align="center">
-<img src="assets/viewer-mobile-en.jpg" width="220" alt="Dashboard on a phone, English interface">
-<img src="assets/viewer-mobile-zh.jpg" width="220" alt="Dashboard on a phone, Chinese interface">
-</p>
-
-*Reader with a thinking block, search across all conversations, the timeline, and the dashboard on a phone in English and Chinese.*
-
-*Screenshots use synthetic sample data; my own archive holds 11,000+ messages.*
+*Dashboard overview, then activity over time, weekly and daily rhythm, topics from titles, top words, the reader, and the dashboard on a phone. Screenshots use synthetic sample data; my own archive holds 11,000+ messages.*
 
 ---
 
