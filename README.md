@@ -1,20 +1,75 @@
 # Technical Projects
 
-Three systems I built and run for my own use. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts. Chat Archive Viewer is public.
+Three systems I built and run for my own use. Chat Archive Viewer is public, with a live demo. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts.
 
-**Specified, designed, tested, deployed and operated these systems, directing AI coding tools to write all the code.**
+Specified, designed, tested, deployed and operated these systems, directing AI coding agents to write the code.
 
 | Project | Period | What it is |
 |---|---|---|
-| [Pink Anchor](#pink-anchor) | Feb 2026 – present | Self-hosted memory and data service for AI assistants |
-| [Pink Anchor for Android](#pink-anchor-for-android) | Mar 2026 – present | Health data pipeline and app |
-| [Chat Archive Viewer](#chat-archive-viewer) | May 2026 | Client-side reader for exported AI chats |
+| [Chat Archive Viewer](#chat-archive-viewer) | May 2026 – present | Analytics dashboard and reader for exported AI chats |
+| [Pink Anchor](#pink-anchor) | Feb 2026 – present | Self-hosted memory and retrieval service for AI assistants |
+| [Pink Anchor for Android](#pink-anchor-for-android) | Mar 2026 – present | Mobile client for Pink Anchor, with a health data pipeline |
+
+---
+
+## Chat Archive Viewer
+
+**Analytics dashboard and reader for exported AI chats** · May 2026 – present
+
+Stack: JavaScript, SVG, IndexedDB, GitHub Pages · [github.com/QithYang/chat-archive-viewer](https://github.com/QithYang/chat-archive-viewer)
+
+- Designed an analytics dashboard that turns an AI chat export into a usage profile: activity over time, daily and weekly rhythm, each side's share of the writing, topics from conversation titles, and top words in Chinese and English.
+- Defined every metric in the repository README, with choices that hold up on real data: only visible messages count, all times are local, and heatmap colours follow quartiles so the scale suits light and heavy users alike.
+- One pure function computes every figure, checked by 10 automated tests on edge cases such as streaks across a month boundary and mixed Chinese and English text. Everything runs in the browser; no data is uploaded.
+- The reader shows conversations with Markdown and thinking blocks, with search, bookmarks and a timeline, in English or Chinese.
+
+**[Live demo](https://qithyang.github.io/chat-archive-viewer/)** (opens on the dashboard)
+
+**Dashboard**
+
+<p align="center">
+<img src="assets/viewer-stats-overview.jpg" width="820" alt="Overview: conversations, messages, time span, active days, longest streak, late-night chats, and each side's share of characters">
+</p>
+<p align="center">
+<img src="assets/viewer-stats-heatmap.jpg" width="820" alt="Daily message heatmap with four colour levels">
+</p>
+<p align="center">
+<img src="assets/viewer-stats-rhythm.jpg" width="820" alt="Messages by weekday and by hour of the day">
+</p>
+<p align="center">
+<img src="assets/viewer-stats-topics.jpg" width="400" alt="Topics from conversation titles, ranked by conversations and messages">
+<img src="assets/viewer-stats-words.jpg" width="400" alt="Most frequent words for each side, in Chinese and English">
+</p>
+<p align="center">
+<img src="assets/viewer-stats-monthly.jpg" width="400" alt="Characters per month for user and model">
+<img src="assets/viewer-stats-rankings.jpg" width="400" alt="Longest and late-night conversations">
+</p>
+
+*Overview, daily heatmap, weekly and daily rhythm, topics from conversation titles, top words, characters per month, and rankings.*
+
+**Reader**
+
+<p align="center">
+<img src="assets/viewer-chat.jpg" width="400" alt="Reader with Markdown and an expanded thinking block">
+<img src="assets/viewer-search.jpg" width="400" alt="Search across all conversations with highlighted matches">
+</p>
+<p align="center">
+<img src="assets/viewer-timeline.jpg" width="400" alt="Month-calendar timeline">
+</p>
+<p align="center">
+<img src="assets/viewer-mobile-en.jpg" width="220" alt="Dashboard on a phone, English interface">
+<img src="assets/viewer-mobile-zh.jpg" width="220" alt="Dashboard on a phone, Chinese interface">
+</p>
+
+*Reader with a thinking block, search across all conversations, the timeline, and the dashboard on a phone in English and Chinese.*
+
+*Screenshots use synthetic sample data; my own archive holds 11,000+ messages.*
 
 ---
 
 ## Pink Anchor
 
-**Self-hosted memory and data service for AI assistants** · Feb 2026 – present
+**Self-hosted memory and retrieval service for AI assistants** · Feb 2026 – present
 
 Stack: Ubuntu, Python/FastAPI, SQLite FTS5, Docker Compose, Model Context Protocol (MCP), Cloudflare Tunnel
 
@@ -55,9 +110,11 @@ The full write-up is in **[docs/memory-system.md](docs/memory-system.md)**. In s
 
 <img src="assets/android-icon.png" width="88" alt="Pink Anchor app icon">
 
-**Health data pipeline and app** · Mar 2026 – present
+**Mobile client for Pink Anchor, with a health data pipeline** · Mar 2026 – present
 
-Stack: Kotlin, Jetpack Compose, Health Connect
+Stack: Kotlin, Jetpack Compose, Room, WorkManager, Health Connect
+
+- Designed the app as Pink Anchor's mobile client: a home dashboard of health data, plus memory, diary, gallery and server-monitor views, with its own paired login and background sync every 15 minutes.
 
 - Specified the pipeline from a wearable through Health Connect and the app to FastAPI, SQLite and MCP tools, with idempotent uploads of 7 record types and nightly roll-ups of older heart-rate and step data.
 - Reproduced a silent sync failure on a real device and confirmed from app and server logs that clearing app storage had revoked Health Connect permissions. Directed the fix and verified it in the release build.
@@ -86,33 +143,3 @@ After app storage was cleared, health data stopped reaching the server and the a
 | File | Shows |
 |---|---|
 | [HealthSyncWorker.kt](excerpts/HealthSyncWorker.kt) | Background sync, permission check, idempotent upload, retry |
-
----
-
-## Chat Archive Viewer
-
-**Client-side reader for exported AI chats** · May 2026
-
-Stack: HTML/JavaScript, IndexedDB, GitHub Pages · [github.com/QithYang/chat-archive-viewer](https://github.com/QithYang/chat-archive-viewer)
-
-- Designed a static web app that parses exported AI chat archives entirely in the browser, with IndexedDB storage, UUID-based deduplication on re-import and a public demo built on synthetic data.
-
-**[Live demo](https://qithyang.github.io/chat-archive-viewer/)** · The full source is public in the repository above.
-
-<p align="center">
-<img src="assets/qithyang-viewer.jpg" width="400" alt="Chat view with Markdown, showing a synthetic sample conversation">
-<img src="assets/qithyang-thinking.jpg" width="400" alt="Expanded thinking blocks">
-</p>
-<p align="center">
-<img src="assets/qithyang-search.jpg" width="400" alt="Search within or across conversations">
-<img src="assets/qithyang-data.jpg" width="400" alt="Month timeline with the data menu open">
-</p>
-
-*Chat view, thinking blocks, search, and the timeline with the data menu. The interface is in Chinese; the screenshots show the bundled synthetic sample conversations, not real data.*
-
-- **Chat view:** Markdown rendering, code blocks, and collapsible thinking and tool-call blocks.
-- **Navigation:** conversation list with title search, bookmarks grouped by conversation, and a month-calendar timeline.
-- **Search:** within the current conversation or across all of them, with highlighting and next/previous jumps.
-- **Re-import:** importing a newer export merges conversations by UUID instead of duplicating them.
-- **Export:** a JSON backup, or a self-contained HTML file that opens on its own.
-- **Privacy:** everything stays in the browser's IndexedDB; the page sends no data anywhere.
