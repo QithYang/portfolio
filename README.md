@@ -7,7 +7,7 @@ Specified, designed, tested, deployed and operated these systems, directing AI c
 | Project | Period | What it is |
 |---|---|---|
 | [Chat Archive Viewer](#chat-archive-viewer) | May 2026 – present | Analytics dashboard and reader for exported AI chats |
-| [Pink Anchor](#pink-anchor) | Feb 2026 – present | Self-hosted memory and retrieval service for AI assistants |
+| [Pink Anchor](#pink-anchor) | Feb 2026 – present | Self-hosted memory and data service for AI assistants |
 | [Pink Anchor for Android](#pink-anchor-for-android) | Mar 2026 – present | Mobile client for Pink Anchor, with a health data pipeline |
 
 ---
@@ -69,7 +69,7 @@ Stack: JavaScript, SVG, IndexedDB, GitHub Pages · [github.com/QithYang/chat-arc
 
 ## Pink Anchor
 
-**Self-hosted memory and retrieval service for AI assistants** · Feb 2026 – present
+**Self-hosted memory and data service for AI assistants** · Feb 2026 – present
 
 Stack: Ubuntu, Python/FastAPI, SQLite FTS5, Docker Compose, Model Context Protocol (MCP), Cloudflare Tunnel
 
