@@ -6,7 +6,7 @@
 import math
 from datetime import datetime, timezone
 
-TIME_DECAY_HALFLIFE = 90        # days
+TIME_DECAY_TAU = 90        # days
 RECALL_SCORE_THRESHOLD = 0.25   # drop weak matches
 VECTOR_THRESHOLD = 0.38         # used by the tool-facing search (0.45 / 0.40 / 0.38 by recall mode)
 
@@ -31,7 +31,7 @@ def compute_time_weight(created_at: str, category: str = "") -> float:
         days = max(0, (datetime.now(timezone.utc) - created).total_seconds() / 86400.0)
     except (ValueError, TypeError):
         days = 0
-    tau = TIME_DECAY_HALFLIFE * 2 if category in ("belief", "relationship") else TIME_DECAY_HALFLIFE
+    tau = TIME_DECAY_TAU * 2 if category in ("belief", "relationship") else TIME_DECAY_TAU
     return 0.5 + 0.5 * math.exp(-days / tau)
 
 
