@@ -20,7 +20,7 @@ Stack: JavaScript, SVG, IndexedDB, GitHub Pages · [github.com/QithYang/chat-arc
 
 - Designed an analytics dashboard that turns an AI chat export into a usage profile: activity over time, daily and weekly rhythm, each side's share of the writing, topics from conversation titles, and top words in Chinese and English.
 - Defined every metric in the repository README, with choices that hold up on real data: only visible messages count, all times are local, and heatmap colours follow quartiles so the scale suits light and heavy users alike.
-- One pure function computes every figure, checked by 10 automated tests on edge cases such as streaks across a month boundary and mixed Chinese and English text. Everything runs in the browser; no data is uploaded.
+- One pure function computes every figure, checked by 12 automated tests on edge cases such as streaks across a month boundary and mixed Chinese and English text. Everything runs in the browser; no data is uploaded.
 - The reader shows conversations with Markdown and thinking blocks, with search, bookmarks and a timeline, in English or Chinese.
 
 **[Live demo](https://qithyang.github.io/chat-archive-viewer/)** (opens on the dashboard)
