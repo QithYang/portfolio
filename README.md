@@ -32,12 +32,12 @@ The full write-up is in **[docs/memory-system.md](docs/memory-system.md)**. In s
 
 - **Seven tools instead of thirty-six.** Every tool description is sent to the assistant at the start of each conversation and uses up context. Each tool takes an `action` argument (`search`, `create`, `update`, `delete`, `audit`, ...), so the whole set costs about 2,500 tokens.
 - **One write path for every client.** New memories are rate-limited, checked against recent entries for duplicates, and merged into an existing entry when they cover the same subject.
-- **Two search paths.** Chinese full-text search (SQLite FTS5 with word segmentation) runs alongside vector search. Scores combine keyword relevance, recency and a bonus when both paths agree. When the full-text results are already confident, the vector call is skipped; if the vector service is down, search falls back to full-text only.
+- **Two search paths.** Chinese full-text search (SQLite FTS5 with word segmentation) runs alongside vector search. Scores combine keyword relevance, recency and a bonus when both paths agree. When the top rule-based score is already high, the vector call is skipped; if the vector service is down, search falls back to full-text only.
 - **A rule that came from a bug.** A query made only of function words ("do you remember?") gives full-text search nothing to match. Search must continue to the vector path instead of returning empty.
 
 ### Retrieval evaluation
 
-Benchmarked on 73 real logged queries, all relevance labels assigned by hand (intra-rater blind re-label agreement: weighted κ = 0.79): nDCG@5 rose 14% over BM25, and a confidence gate cut embedding calls and mean latency by 23% with no measurable quality loss under cross-validation. Method and results: **[docs/retrieval-evaluation.md](docs/retrieval-evaluation.md)**.
+Benchmarked on 73 real logged queries, all relevance labels assigned by hand (intra-rater blind re-label agreement: weighted κ = 0.79). On the 44 queries with relevant memories, nDCG@5 rose 14% over BM25; a confidence gate that skips the vector call when the top rule-based score is high cut embedding calls and mean latency by 23%, with no measurable quality loss under cross-validation. Method and results: **[docs/retrieval-evaluation.md](docs/retrieval-evaluation.md)**.
 
 ### Backups and restore drills
 
@@ -51,7 +51,7 @@ Benchmarked on 73 real logged queries, all relevance labels assigned by hand (in
 | [hybrid_search.py](excerpts/hybrid_search.py) | Full-text + vector search, scoring, fallback |
 | [memory_write_filters.py](excerpts/memory_write_filters.py) | Content filters, rate limit, duplicate check, merge |
 | [mcp_tools.py](excerpts/mcp_tools.py) | Multi-action MCP tools |
-| [monthly_restore_drill.sh](excerpts/monthly_restore_drill.sh) | Monthly restore drill checks |
+| [monthly_restore_drill.sh](excerpts/monthly_restore_drill.sh) | Monthly restore drill checks (trimmed excerpt; the full drill runs 24 checks) |
 
 ---
 
@@ -74,7 +74,7 @@ Stack: Kotlin, Jetpack Compose, Room, WorkManager, Health Connect
 
 <p align="center"><img src="assets/android-home.png" width="320" alt="Home screen with daily note, countdowns, steps, heart rate, sleep, cycle and screen time cards"></p>
 
-*Screenshots from my own phone, with personal details covered. The home screen combines captures from different days.*
+*Screenshots from my own phone. The home screen combines captures from different days.*
 
 <p align="center">
 <img src="assets/android-menu.png" width="200" alt="Navigation menu">

@@ -22,7 +22,7 @@ def compute_similarity(bm25_raw: float) -> float:
 
 def compute_time_weight(created_at: str, category: str = "") -> float:
     """Category-aware decay. Facts never decay; beliefs/relationships decay slowly
-    (half-life 180 days); events/decisions decay normally (90 days).
+    (time constant 180 days); events/decisions decay normally (90 days).
     Floor of 0.5 so old memories are down-weighted, never erased."""
     if category == "fact":
         return 1.0
@@ -31,8 +31,8 @@ def compute_time_weight(created_at: str, category: str = "") -> float:
         days = max(0, (datetime.now(timezone.utc) - created).total_seconds() / 86400.0)
     except (ValueError, TypeError):
         days = 0
-    halflife = TIME_DECAY_HALFLIFE * 2 if category in ("belief", "relationship") else TIME_DECAY_HALFLIFE
-    return 0.5 + 0.5 * math.exp(-days / halflife)
+    tau = TIME_DECAY_HALFLIFE * 2 if category in ("belief", "relationship") else TIME_DECAY_HALFLIFE
+    return 0.5 + 0.5 * math.exp(-days / tau)
 
 
 def compute_score(mem: dict, query_keywords: list) -> float:

@@ -41,13 +41,13 @@ Search runs two paths and merges them.
 
 Each candidate is scored as:
 
-- BM25 relevance compressed into 0 to 1 with `b / (1 + b)`, multiplied by a **time decay**. Facts never decay, beliefs and relationships have a 180-day half-life, and events and decisions have 90 days. The decay has a floor of 0.5, so old memories rank lower but never disappear.
+- BM25 relevance compressed into 0 to 1 with `b / (1 + b)`, multiplied by a **time decay**. Facts never decay; beliefs and relationships decay with a 180-day time constant, and events and decisions with a 90-day one. The decay has a floor of 0.5, so old memories rank lower but never disappear.
 - plus bonuses for keyword overlap (proportional, up to +0.5), an exact tag match, the fact category, importance (small) and pinned items;
 - plus a **non-linear vector bonus**, `0.8 * max(0, sim - 0.35)^1.5`, which stays near zero for weak matches and grows quickly for strong ones. A memory found by both paths gets a further +0.15.
 
 For explicit searches, a **confidence gate** skips the vector path when the top rule-based score is already high, which saves about a quarter of embedding calls with no measurable loss in ranking quality ([evaluation](retrieval-evaluation.md)).
 
-Similarity thresholds depend on context: 0.45 for passive recall during chat (where a wrong memory is worse than none), 0.40 when the user asks a question, and 0.38 for explicit searches.
+Similarity thresholds depend on context: 0.45 for automatic recall during chat (where a wrong memory is worse than none), 0.40 when the user asks a question, and 0.38 for explicit searches.
 
 Two rules came from bugs:
 
