@@ -1,44 +1,14 @@
 # Technical Projects
 
-Three systems I built and run for my own use. Chat Archive Viewer is public, with a live demo. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts.
+Three systems I built and run for my own use. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts. Chat Archive Viewer is public, with a live demo.
 
 Specified, designed, tested, deployed and operated these systems, directing AI coding agents to write the code.
 
 | Project | Period | What it is |
 |---|---|---|
-| [Chat Archive Viewer](#chat-archive-viewer) | May 2026 – present | Analytics dashboard and reader for exported AI chats |
 | [Pink Anchor](#pink-anchor) | Feb 2026 – present | Self-hosted memory and data service for AI assistants |
 | [Pink Anchor for Android](#pink-anchor-for-android) | Mar 2026 – present | Mobile client for Pink Anchor, with a health data pipeline |
-
----
-
-## Chat Archive Viewer
-
-**Analytics dashboard and reader for exported AI chats** · May 2026 – present
-
-Stack: JavaScript, SVG, IndexedDB, GitHub Pages · [github.com/QithYang/chat-archive-viewer](https://github.com/QithYang/chat-archive-viewer)
-
-- Designed an analytics dashboard that turns an AI chat export into a usage profile: activity over time, daily and weekly rhythm, each side's share of the writing, topics from conversation titles, and top words in Chinese and English.
-- Defined every metric in the repository README, with choices that hold up on real data: only visible messages count, all times are local, and heatmap colours follow quartiles so the scale suits light and heavy users alike.
-- One pure function computes every figure, checked by 12 automated tests on edge cases such as streaks across a month boundary and mixed Chinese and English text. Everything runs in the browser; no data is uploaded.
-- The reader shows conversations with Markdown and thinking blocks, with search, bookmarks and a timeline, in English or Chinese.
-
-**[Live demo](https://qithyang.github.io/chat-archive-viewer/)** (opens on the dashboard)
-
-<p align="center"><img src="assets/viewer-stats-overview.jpg" width="640" alt="Dashboard overview: conversations, messages, time span, active days, longest streak, late-night chats, and each side's share of characters"></p>
-
-<p align="center">
-<img src="assets/viewer-tile-activity.jpg" width="266" alt="Activity over time: daily heatmap and characters per month">
-<img src="assets/viewer-tile-rhythm.jpg" width="266" alt="Weekly and daily rhythm">
-<img src="assets/viewer-tile-topics.jpg" width="266" alt="Topics from conversation titles">
-</p>
-<p align="center">
-<img src="assets/viewer-tile-words.jpg" width="266" alt="Top words for each side, in Chinese and English">
-<img src="assets/viewer-tile-reader.jpg" width="266" alt="Reader with Markdown and a thinking block">
-<img src="assets/viewer-tile-mobile.jpg" width="266" alt="Dashboard on a phone">
-</p>
-
-*Dashboard overview, then activity over time, weekly and daily rhythm, topics from titles, top words, the reader, and the dashboard on a phone. Screenshots use synthetic sample data; my own archive holds 11,000+ messages.*
+| [Chat Archive Viewer](#chat-archive-viewer) | May 2026 – present | Analytics dashboard and reader for exported AI chats |
 
 ---
 
@@ -122,3 +92,33 @@ After app storage was cleared, health data stopped reaching the server and the a
 | File | Shows |
 |---|---|
 | [HealthSyncWorker.kt](excerpts/HealthSyncWorker.kt) | Background sync, permission check, idempotent upload, retry |
+
+---
+
+## Chat Archive Viewer
+
+**Analytics dashboard and reader for exported AI chats** · May 2026 – present
+
+Stack: JavaScript, SVG, IndexedDB, GitHub Pages · [github.com/QithYang/chat-archive-viewer](https://github.com/QithYang/chat-archive-viewer)
+
+- Designed an analytics dashboard that turns an AI chat export into a usage profile: activity over time, daily and weekly rhythm, each side's share of the writing, topics from conversation titles, and top words in Chinese and English.
+- Defined every metric in the repository README, with choices that hold up on real data: only visible messages count, all times are local, and heatmap colours follow quartiles so the scale suits light and heavy users alike.
+- One pure function computes every figure, checked by 12 automated tests on edge cases such as streaks across a month boundary and mixed Chinese and English text. Everything runs in the browser; no data is uploaded.
+- The reader shows conversations with Markdown and thinking blocks, with search, bookmarks and a timeline, in English or Chinese.
+
+**[Live demo](https://qithyang.github.io/chat-archive-viewer/)** (opens on the dashboard)
+
+<p align="center"><img src="assets/viewer-stats-overview.jpg" width="640" alt="Dashboard overview: conversations, messages, time span, active days, longest streak, late-night chats, and each side's share of characters"></p>
+
+<p align="center">
+<img src="assets/viewer-tile-activity.jpg" width="266" alt="Activity over time: daily heatmap and characters per month">
+<img src="assets/viewer-tile-rhythm.jpg" width="266" alt="Weekly and daily rhythm">
+<img src="assets/viewer-tile-topics.jpg" width="266" alt="Topics from conversation titles">
+</p>
+<p align="center">
+<img src="assets/viewer-tile-words.jpg" width="266" alt="Top words for each side, in Chinese and English">
+<img src="assets/viewer-tile-reader.jpg" width="266" alt="Reader with Markdown and a thinking block">
+<img src="assets/viewer-tile-mobile.jpg" width="266" alt="Dashboard on a phone">
+</p>
+
+*Dashboard overview, then activity over time, weekly and daily rhythm, topics from titles, top words, the reader, and the dashboard on a phone. Screenshots use synthetic sample data; my own archive holds 11,000+ messages.*
