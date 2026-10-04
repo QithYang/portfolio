@@ -34,6 +34,8 @@ class SyncWorker @AssistedInject constructor(
                     if (r.code == 401) Result.failure(workDataOf(KEY_FAIL_REASON to REASON_AUTH))
                     else Result.retry()
             }
+        } catch (e: CancellationException) {
+            throw e          // work was stopped: not a failure, must not be retried
         } catch (e: Exception) {
             Result.retry()   // transient errors -> WorkManager backoff
         }
@@ -103,16 +105,20 @@ suspend fun syncToServer(): SyncResult {
 
     return try {
         val response = api.syncHealth(SyncRequest(unsynced.map { it.toSyncRecord() }, syncId))
-        if (response.isSuccessful) {
+        val body = response.body()
+        if (response.isSuccessful && body != null) {
             dao.markSynced(unsynced.map { it.id })          // only after server confirms
-            val accepted = response.body()!!.accepted
-            dao.updateSyncLog(logId, "success", accepted = accepted)
-            SyncResult.Success(accepted)
+            dao.updateSyncLog(logId, "success", accepted = body.accepted)
+            SyncResult.Success(body.accepted)
         } else {
+            // An empty 2xx body is not proof of delivery either: keep the rows
+            // and resend; the server skips records it already has.
             dao.incrementRetryCount(unsynced.map { it.id })  // rows stay unsynced
             dao.updateSyncLog(logId, "failed", error = "HTTP ${response.code()}")
             SyncResult.Error(response.code(), response.message())
         }
+    } catch (e: CancellationException) {
+        throw e
     } catch (e: Exception) {   // network error: rows stay unsynced, worker retries
         dao.incrementRetryCount(unsynced.map { it.id })
         SyncResult.Error(-1, e.message ?: "unknown error")
