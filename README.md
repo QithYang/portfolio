@@ -67,7 +67,7 @@ The full write-up is in **[docs/memory-system.md](docs/memory-system.md)**. In s
 
 ### Retrieval evaluation
 
-Benchmarked on 73 real logged queries, all relevance labels assigned by hand (blind re-label agreement: weighted κ = 0.79): nDCG@5 rose 14% over BM25, and a confidence gate cut embedding calls and mean latency by 23% with no measurable quality loss under cross-validation. Method and results: **[docs/retrieval-evaluation.md](docs/retrieval-evaluation.md)**.
+Benchmarked on 73 real logged queries, all relevance labels assigned by hand (intra-rater agreement on a blind second round: weighted κ = 0.79): nDCG@5 rose 14% over BM25, and a confidence gate cut embedding calls and mean latency by 23% with no measurable quality loss under cross-validation. Method and results: **[docs/retrieval-evaluation.md](docs/retrieval-evaluation.md)**.
 
 ### Backups and restore drills
 

@@ -11,7 +11,7 @@ Pink Anchor ranks memories with a hybrid model: BM25 full-text relevance, embedd
 
 How it was tested
 - 73 real queries from daily use. Queries and results were frozen, and the gate's test plan was written down before any gate numbers were run; the final figures re-run that plan unchanged on the final labels.
-- All relevance labels were assigned by hand; 53 of the labels were re-labelled blind in a second round (weighted κ = 0.79, 95% CI 0.64 to 0.89).
+- All relevance labels were assigned by hand; 53 of the labels were re-labelled blind by the same annotator in a second round (intra-rater weighted κ = 0.79, 95% CI 0.64 to 0.89).
 - Confidence intervals from a paired bootstrap; resampling by topic cluster gives the same conclusion.
 - The gate threshold was fitted on one half of the queries and tested on the other (2-fold cross-validation).
 
