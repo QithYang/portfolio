@@ -62,8 +62,12 @@ The full write-up is in **[docs/memory-system.md](docs/memory-system.md)**. In s
 
 - **Seven tools instead of thirty-six.** Every tool description is sent to the assistant at the start of each conversation and uses up context. Each tool takes an `action` argument (`search`, `create`, `update`, `delete`, `audit`, ...), so the whole set costs about 2,500 tokens.
 - **One write path for every client.** New memories are rate-limited, checked against recent entries for duplicates, and merged into an existing entry when they cover the same subject.
-- **Two search paths.** Chinese full-text search (SQLite FTS5 with word segmentation) runs alongside vector search. Scores combine keyword relevance, recency and a bonus when both paths agree. If the vector service is down, search falls back to full-text only.
+- **Two search paths.** Chinese full-text search (SQLite FTS5 with word segmentation) runs alongside vector search. Scores combine keyword relevance, recency and a bonus when both paths agree. When the full-text results are already confident, the vector call is skipped; if the vector service is down, search falls back to full-text only.
 - **A rule that came from a bug.** A query made only of function words ("do you remember?") gives full-text search nothing to match. Search must continue to the vector path instead of returning empty.
+
+### Retrieval evaluation
+
+On 73 logged queries, with relevance labels checked against blind human judgments (weighted κ = 0.79), hybrid ranking raised nDCG@5 by 14% over full-text search alone, and a confidence gate cut embedding calls by 23% with no measurable loss in quality. Method and full results: **[docs/retrieval-evaluation.md](docs/retrieval-evaluation.md)**.
 
 ### Backups and restore drills
 

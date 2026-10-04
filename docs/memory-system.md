@@ -45,6 +45,8 @@ Each candidate is scored as:
 - plus bonuses for keyword overlap (proportional, up to +0.5), an exact tag match, the fact category, importance (small) and pinned items;
 - plus a **non-linear vector bonus**, `0.8 * max(0, sim - 0.35)^1.5`, which stays near zero for weak matches and grows quickly for strong ones. A memory found by both paths gets a further +0.15.
 
+For explicit searches, a **confidence gate** skips the vector path when the top rule-based score is already high, which saves about a quarter of embedding calls with no measurable loss in ranking quality ([evaluation](retrieval-evaluation.md)).
+
 Similarity thresholds depend on context: 0.45 for passive recall during chat (where a wrong memory is worse than none), 0.40 when the user asks a question, and 0.38 for explicit searches.
 
 Two rules came from bugs:
