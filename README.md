@@ -1,8 +1,10 @@
 # Technical Projects
 
-Three systems I built and run for my own use. Pink Anchor and its Android app are in daily use; their repository is private because it holds live configuration, so this page collects descriptions, diagrams, screenshots and selected code excerpts. Chat Archive Viewer is public, with a live demo.
+This portfolio presents three technical projects spanning information retrieval, mobile systems, and data analytics. It documents their architecture, engineering decisions, evaluation results, and selected code excerpts. Pink Anchor and its Android client are in daily use; their production repositories remain private to protect live configuration and personal data. Chat Archive Viewer is open source, with a live demo.
 
-Specified, designed, tested, deployed and operated these systems, directing AI coding agents to write the code.
+Specified, designed, tested, deployed, and operated these systems, directing AI coding agents to write the code.
+**Technical evidence:** [Retrieval evaluation: methodology and results](docs/retrieval-evaluation.md) · [Python hybrid search implementation](excerpts/hybrid_search.py)
+
 
 | Project | Period | What it is |
 |---|---|---|
