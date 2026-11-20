@@ -1,3 +1,6 @@
+# Context: Invoked by Pink Anchor's MCP memory-recall tools and search endpoints.
+# Input/Output: Takes a query string and merges FTS5 BM25 with vector similarity into ranked results.
+# Constraints: Applies category-aware time decay (0.5 floor) and skips weak matches below RECALL_SCORE_THRESHOLD.
 # Excerpt from the private Pink Anchor repository.
 # Trimmed for readability; helper functions and imports are omitted.
 #
