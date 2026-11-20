@@ -5,6 +5,11 @@ This portfolio presents three technical projects spanning information retrieval,
 Specified, designed, tested, deployed, and operated these systems, directing AI coding agents to write the code.
 **Technical evidence:** [Retrieval evaluation: methodology and results](docs/retrieval-evaluation.md) · [Python hybrid search implementation](excerpts/hybrid_search.py)
 
+## Quick Navigation
+
+- **Offline Retrieval Evaluation ([docs/retrieval-evaluation.md](docs/retrieval-evaluation.md))**: Frozen evaluation across 73 real-use queries with blind re-labelling (weighted κ = 0.79). Hybrid search improved nDCG@5 by **+14%** (0.602 → 0.687 on 44 relevant queries, paired-bootstrap 95% CI above zero); a 2-fold cross-validated confidence gate cut embedding calls by **23%** and mean latency by **148 ms** (655 → 507 ms) with no significant quality loss.
+- **System Design & Code Excerpts ([docs/memory-system.md](docs/memory-system.md) · [excerpts/hybrid_search.py](excerpts/hybrid_search.py))**: SQLite FTS5 + vector retrieval scoring, write-pipeline filters, WorkManager health-sync worker, and automated monthly restore drills.
+- **Full Open-Source Project ([chat-archive-viewer](https://github.com/QithYang/chat-archive-viewer) · [Live Demo](https://qithyang.github.io/chat-archive-viewer/))**: Local-only browser analytics dashboard (IndexedDB, zero server uploads) with pure-function metrics and 12 automated `node --test` unit tests.
 
 | Project | Period | What it is |
 |---|---|---|
