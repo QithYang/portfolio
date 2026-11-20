@@ -1,3 +1,6 @@
+# Context: Runs as Pink Anchor's FastMCP server (pa-mcp) for LLM tool calls.
+# Input/Output: Dispatches 7 merged action-based tools and returns structured JSON or readable errors.
+# Constraints: Proxies writes through the main HTTP API; reads health data from SQLite read-only.
 # Excerpt from the private Pink Anchor repository.
 # Trimmed for readability; helper functions and imports are omitted.
 #
