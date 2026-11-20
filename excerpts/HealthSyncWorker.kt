@@ -1,3 +1,6 @@
+// Context: Scheduled via Android WorkManager in the Pink Anchor Android client.
+// Input/Output: Reads Health Connect and screen-time metrics into Room, then syncs batches to the server.
+// Constraints: Surfaces missing permissions or 401 auth errors as explicit failure reasons instead of retrying silently.
 // Excerpt from the private Pink Anchor repository.
 // Trimmed for readability; imports and helper classes are omitted.
 //
