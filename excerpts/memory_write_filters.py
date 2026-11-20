@@ -1,3 +1,6 @@
+# Context: Guards Pink Anchor's memory extraction pipeline and unified write API.
+# Input/Output: Screens candidate memory strings and returns accepted/merged/rejected write outcomes.
+# Constraints: Blocks system meta-talk and abstract phrasing; enforces hourly (10) and daily (30) caps.
 # Excerpt from the private Pink Anchor repository.
 # Trimmed for readability; helper functions and imports are omitted.
 #
