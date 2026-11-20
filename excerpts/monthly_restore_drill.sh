@@ -1,4 +1,7 @@
 #!/bin/bash
+# Context: Scheduled via cron on the 1st of each month for Pink Anchor disaster recovery.
+# Input/Output: Reads last_manifest.json, downloads off-site backups to $DRILL, and exits 0/1.
+# Constraints: Read-only against production; keeps $DRILL on failure and skips container startup.
 # Excerpt from the private Pink Anchor repository.
 # Trimmed for readability; helper functions are omitted.
 #
